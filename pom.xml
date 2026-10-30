@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>ma.enset</groupId>
+    <groupId>net.ayoub</groupId>
     <artifactId>test-adria-pfe-27</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
