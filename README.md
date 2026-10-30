@@ -174,42 +174,6 @@ mutation {
 
 Exemple : http://localhost:8888/accounts
 
-## Lancement
-
-Compilation :
-
-```bash
-mvn clean package -DskipTests
-```
-
-Ordre de démarrage :
-
-1. `discovery-service`
-2. `config-service`
-3. `account-service`
-4. `transaction-service`
-5. `gateway-service`
-
-Tableau de bord Eureka : http://localhost:8761
-
 ## Partie IA Python
 
 Le dossier `Test_Adria_Partie_AI` contient le notebook de détection de fraude (`fraude_bancaire.ipynb`) et le jeu de données `bank_transactions.csv`.
-
-## État d'avancement
-
-| Partie | Élément | État |
-|---|---|---|
-| A | Projet Maven multimodule, dépôt GitHub | Fait |
-| C | account-service : modèle, service, REST, GraphQL, Swagger | Fait |
-| C | transaction-service : modèle, service, REST, GraphQL, Swagger, virement | Fait |
-| C | OpenFeign + Resilience4J | Fait |
-| C | Serveurs MCP | À faire |
-| D | Eureka, Config Server (`bank.transaction.max-amount`), Gateway | Fait |
-| E | Chatbot Spring AI | Squelette |
-| F | Kafka (`bank.transactions.created`) + consumer | Squelette |
-| G | Client Angular | À faire |
-| H | Détection de fraude Python | Voir `Test_Adria_Partie_AI` |
-| I | Docker, Docker Compose, CI/CD | À faire |
-
-Vérifié par appels réels : API REST d'`account-service` (consultation, débit, crédit, erreurs 400/404), Swagger d'`account-service`, création de la table `transactions`, paramètre servi par le Config Server. Les appels de bout en bout transaction-service → account-service, GraphQL et la Gateway sont compilés mais restent à tester en conditions réelles.
