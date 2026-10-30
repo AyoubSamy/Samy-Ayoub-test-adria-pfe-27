@@ -68,6 +68,9 @@ public class TransactionService {
     }
 
     private void checkAmount(BigDecimal amount) {
+        if (amount == null || amount.signum() <= 0) {
+            throw new InvalidTransactionException("Amount must be strictly positive");
+        }
         if (amount.compareTo(maxAmount) > 0) {
             throw new InvalidTransactionException("Amount exceeds the maximum allowed: " + maxAmount);
         }

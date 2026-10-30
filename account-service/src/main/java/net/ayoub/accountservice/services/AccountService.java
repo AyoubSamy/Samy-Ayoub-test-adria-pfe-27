@@ -31,15 +31,23 @@ public class AccountService {
     }
 
     public AccountDTO debit(UUID id, double amount) {
+        checkPositive(amount);
         Account account = findAccount(id);
         account.setBalance(account.getBalance() - amount);
         return toDTO(accountRepository.save(account));
     }
 
     public AccountDTO credit(UUID id, double amount) {
+        checkPositive(amount);
         Account account = findAccount(id);
         account.setBalance(account.getBalance() + amount);
         return toDTO(accountRepository.save(account));
+    }
+
+    private void checkPositive(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be strictly positive");
+        }
     }
 
     private Account findAccount(UUID id) {

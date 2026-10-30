@@ -1,0 +1,18 @@
+type Query {
+    accounts: [Account]
+    accountById(id: ID!): Account
+    balance(id: ID!): Float
+}
+
+type Mutation {
+    debit(id: ID!, amount: Float!): Account
+    credit(id: ID!, amount: Float!): Account
+}
+
+type Account {
+    id: ID
+    customerReference: String
+    status: String
+    currency: String
+    balance: Float
+}
