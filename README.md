@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Test ADRIA ENSET 2027 — Microservices bancaires
 
 Projet Maven multimodule (Java 21, Spring Boot 4.1.2, Spring Cloud 2025.1.4, Spring AI 2.0.2).
@@ -23,3 +24,6 @@ mvn clean package -DskipTests
 ## État
 
 Étape 1 : squelette multimodule et classes de démarrage. Aucune fonctionnalité métier.
+=======
+# Samy-Ayoub-test-adria-pfe-27
+>>>>>>> 538e8ceea9057cf79169e4e2acd73a2cd64224e6
